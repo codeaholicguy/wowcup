@@ -1,0 +1,62 @@
+{
+  "name": "wowcup",
+  "description": "The finest Worldcup 2018 CLI.",
+  "version": "0.0.0",
+  "author": "Hoang Nhat Nguyen @codeaholicguy",
+  "bin": {
+    "wowcup": "./bin/run"
+  },
+  "bugs": "https://github.com/codeaholicguy/wowcup/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^1",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "globby": "^8",
+    "mocha": "^5",
+    "nyc": "^12",
+    "ts-node": "^6",
+    "tslint": "^5",
+    "typescript": "^2.9"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/codeaholicguy/wowcup",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "wowcup",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "codeaholicguy/wowcup",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
+    "prepare": "rm -rf lib && tsc",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
