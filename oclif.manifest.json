@@ -1,0 +1,1 @@
+{"version":"0.0.0","commands":{"table":{"id":"table","description":"get league table","pluginName":"wowcup","pluginType":"core","aliases":[],"examples":["$ wowcup table","$ wowcup table -g a"],"flags":{"help":{"name":"help","type":"boolean","char":"h","description":"show CLI help"},"name":{"name":"name","type":"option","char":"n","description":"get table by name"}},"args":[]}}}

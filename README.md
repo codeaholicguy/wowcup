@@ -31,28 +31,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`wowcup hello [FILE]`](#wowcup-hello-file)
 * [`wowcup help [COMMAND]`](#wowcup-help-command)
-
-## `wowcup hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ wowcup hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ wowcup hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/hello.ts)_
+* [`wowcup table`](#wowcup-table)
 
 ## `wowcup help [COMMAND]`
 
@@ -70,4 +50,23 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
+
+## `wowcup table`
+
+get league table
+
+```
+USAGE
+  $ wowcup table
+
+OPTIONS
+  -h, --help       show CLI help
+  -n, --name=name  get table by name
+
+EXAMPLES
+  $ wowcup table
+  $ wowcup table -g a
+```
+
+_See code: [src/commands/table.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/table.ts)_
 <!-- commandsstop -->
