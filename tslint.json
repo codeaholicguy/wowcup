@@ -1,6 +1,7 @@
 {
   "extends": "@oclif/tslint",
   "rules": {
-    "no-console": [false]
+    "no-console": [false],
+    "arrow-parens": [false]
   }
 }

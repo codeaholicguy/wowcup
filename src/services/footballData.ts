@@ -5,7 +5,6 @@ const FOOTBALL_DATA_API_URL: string = 'https://api.football-data.org/v1'
 
 const WORLDCUP_ENDPOINT: string = '/competitions/467'
 const LEAGUE_TABLE_ENDPOINT: string = '/competitions/467/leagueTable'
-const FIXTURES_ENDPOINT: string = '/competitions/467/fixtures'
 
 export interface Competition {
   caption: string

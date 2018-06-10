@@ -19,17 +19,21 @@ export default class Table extends Command {
     const tableName = flags.name
 
     renderer.renderHeader()
+
     if (tableName) {
-      this.renderTableByName(tableName)
+      await this.renderTableByName(tableName)
     } else {
-      this.renderAllTables()
+      await this.renderAllTables()
     }
   }
 
-  async renderAllTables(): Promise<void> {}
+  async renderAllTables(): Promise<void> {
+    cli.action.start('fetching all league tables')
+    cli.action.stop()
+  }
 
   async renderTableByName(tableName: string): Promise<void> {
-    cli.action.start('fetching data')
+    cli.action.start(`fetching league table ${tableName.toUpperCase()}`)
 
     const teams: Array<
       Team
