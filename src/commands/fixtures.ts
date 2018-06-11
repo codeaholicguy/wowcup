@@ -14,7 +14,8 @@ export default class Fixtures extends Command {
   static flags = {
     help: flags.help({char: 'h'}),
     next: flags.boolean({char: 'n', description: 'get next recent fixtures'}),
-    last: flags.boolean({char: 'l', description: 'get last recent fixtures'})
+    last: flags.boolean({char: 'l', description: 'get last recent fixtures'}),
+    quiet: flags.boolean({char: 'q', description: 'do not show splash header'})
   }
 
   async run() {
@@ -22,7 +23,8 @@ export default class Fixtures extends Command {
     const next = flags.next
     const last = flags.last
 
-    renderer.renderHeader()
+    if (!flags.quiet)
+      renderer.renderHeader()
 
     if (next && last) {
       console.log(
