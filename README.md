@@ -28,7 +28,7 @@ $ npm install -g wowcup
 $ wowcup COMMAND
 running command...
 $ wowcup (-v|--version|version)
-wowcup/0.0.2 darwin-x64 node-v10.3.0
+wowcup/0.0.3 darwin-x64 node-v10.3.0
 $ wowcup --help [COMMAND]
 USAGE
   $ wowcup COMMAND
@@ -45,8 +45,6 @@ USAGE
 
 get worldcup fixtures
 
-![](https://i.gyazo.com/a562d442af729c3b59f34110008d5ed0.gif)
-
 ```
 USAGE
   $ wowcup fixtures
@@ -61,28 +59,7 @@ EXAMPLES
   $ wowcup fixtures -n
 ```
 
-_See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.2/src/commands/fixtures.ts)_
-
-## `wowcup standings`
-
-get worldcup standings
-
-![](https://i.gyazo.com/19a5a39b69613baa4154f892a0a8d9b8.gif)
-
-```
-USAGE
-  $ wowcup standings
-
-OPTIONS
-  -h, --help         show CLI help
-  -t, --table=table  get standings by table
-
-EXAMPLES
-  $ wowcup standings
-  $ wowcup standings -t a
-```
-
-_See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.2/src/commands/standings.ts)_
+_See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.3/src/commands/fixtures.ts)_
 
 ## `wowcup help [COMMAND]`
 
@@ -100,6 +77,25 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
+
+## `wowcup standings`
+
+get worldcup standings
+
+```
+USAGE
+  $ wowcup standings
+
+OPTIONS
+  -h, --help         show CLI help
+  -t, --table=table  get standings by table
+
+EXAMPLES
+  $ wowcup standings
+  $ wowcup standings -t a
+```
+
+_See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.3/src/commands/standings.ts)_
 <!-- commandsstop -->
 
 ## Development
