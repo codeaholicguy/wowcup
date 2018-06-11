@@ -24,6 +24,25 @@ export default {
     ])
   },
 
+  async getAllStandings(): Promise<Map<string, Array<Standing>>> {
+    const {
+      data: {standings: standingsJson}
+    } = await axios.get(`${FOOTBALL_DATA_API_URL}${LEAGUE_TABLE_ENDPOINT}`)
+    const result: Map<string, Array<Standing>> = Object.keys(
+      standingsJson
+    ).reduce((acc, table) => {
+      const standings = standingsJson[table].map(
+        (standing: IStandingJson) => new Standing(standing)
+      )
+
+      acc.set(table, standings)
+
+      return acc
+    }, new Map())
+
+    return result
+  },
+
   async getStandings(tableName: string): Promise<Array<Standing>> {
     const {
       data: {standings: standingsJson}

@@ -22,14 +22,20 @@ export default {
     })
   },
 
-  renderTeamTable(tableName: string, standings: Array<Standing>): void {
+  renderStandings(tableName: string, standings: Array<Standing>): void {
     console.log(
       emoji.get('soccer'),
-      c.red.bold(`League table ${tableName.toUpperCase()}`)
+      c.cyan.bold(`League table ${tableName.toUpperCase()}`)
     )
 
     const table = new StandingsTableBuilder(standings)
 
     console.log(table.buildTable().toString())
+  },
+
+  renderAllStandings(standings: Map<string, Array<Standing>>): void {
+    standings.forEach((tableStandings, table) => {
+      this.renderStandings(table, tableStandings)
+    })
   }
 }

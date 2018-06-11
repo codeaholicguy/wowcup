@@ -25,12 +25,19 @@ export default class Standings extends Command {
     if (table) {
       await this.renderStandingsByTable(table)
     } else {
-      await this.renderAllTables()
+      await this.renderStandings()
     }
   }
 
-  async renderAllTables(): Promise<void> {
-    cli.action.start('fetching all league tables')
+  async renderStandings(): Promise<void> {
+    cli.action.start(`${emoji.get('soccer')} fetching all league tables`)
+
+    const standings: Array<
+      Standing
+    > = await footballDataService.getAllStandings()
+
+    renderer.renderAllStandings(standings)
+
     cli.action.stop()
   }
 
@@ -45,6 +52,6 @@ export default class Standings extends Command {
 
     cli.action.stop()
 
-    renderer.renderTeamTable(table, standings)
+    renderer.renderStandings(table, standings)
   }
 }
