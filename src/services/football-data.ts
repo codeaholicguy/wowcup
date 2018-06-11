@@ -14,7 +14,7 @@ import {
 const FOOTBALL_DATA_API_URL: string = 'https://api.football-data.org/v1'
 
 const COMPETITION_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}`
-const LEAGUE_TABLE_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/leagueTabl`
+const LEAGUE_TABLE_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/leagueTable`
 const FIXTURES_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/fixtures`
 
 export default {
