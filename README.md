@@ -1,7 +1,13 @@
 wowcup
 ======
 
-The finest Worldcup 2018 CLI.
+The finest Worldcup 2018 CLI. Inspired by [nba-go](https://github.com/xxhomey19/nba-go).
+
+`wowcup` is a node command line application written in TypeScript using [oclif](https://github.com/oclif/oclif) (a Node.JS Open CLI Framework).
+
+This is still in its early stages of development, so do expect bugs and errors. Your contributions are very welcome!
+
+All data comes from [api.football-data.org](https://api.football-data.org) APIs.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/wowcup.svg)](https://npmjs.org/package/wowcup)
@@ -38,6 +44,8 @@ USAGE
 ## `wowcup fixtures`
 
 get worldcup fixtures
+
+![](https://i.gyazo.com/a562d442af729c3b59f34110008d5ed0.gif)
 
 ```
 USAGE
