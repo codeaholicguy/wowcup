@@ -84,6 +84,8 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5
 
 get worldcup standings
 
+![](https://i.gyazo.com/19a5a39b69613baa4154f892a0a8d9b8.gif)
+
 ```
 USAGE
   $ wowcup standings
