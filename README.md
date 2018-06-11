@@ -45,9 +45,12 @@ USAGE
 
 OPTIONS
   -h, --help  show CLI help
+  -l, --last  get last recent fixtures
+  -n, --next  get next recent fixtures
 
-EXAMPLE
+EXAMPLES
   $ wowcup fixtures
+  $ wowcup fixtures -n
 ```
 
 _See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/fixtures.ts)_
