@@ -32,7 +32,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`wowcup help [COMMAND]`](#wowcup-help-command)
-* [`wowcup table`](#wowcup-table)
+* [`wowcup standings`](#wowcup-standings)
 
 ## `wowcup help [COMMAND]`
 
@@ -51,22 +51,22 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
 
-## `wowcup table`
+## `wowcup standings`
 
-get league table
+get worldcup standings
 
 ```
 USAGE
-  $ wowcup table
+  $ wowcup standings
 
 OPTIONS
-  -h, --help       show CLI help
-  -n, --name=name  get table by name
+  -h, --help         show CLI help
+  -t, --table=table  get standings by table
 
 EXAMPLES
-  $ wowcup table
-  $ wowcup table -g a
+  $ wowcup standings
+  $ wowcup standings -t a
 ```
 
-_See code: [src/commands/table.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/table.ts)_
+_See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/standings.ts)_
 <!-- commandsstop -->

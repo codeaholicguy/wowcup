@@ -226,6 +226,10 @@
   dependencies:
     "@types/node" "*"
 
+"@types/node-emoji@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@types/node-emoji/-/node-emoji-1.8.0.tgz#6bc88a880cdcb3c165e2828d056db242e8829a8b"
+
 "@types/node@*", "@types/node@^10", "@types/node@^10.3.0":
   version "10.3.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.2.tgz#3840ec6c12556fdda6e0e6d036df853101d732a4"
@@ -1478,6 +1482,10 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
+lodash.toarray@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
+
 lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
@@ -1658,6 +1666,12 @@ no-case@^2.2.0, no-case@^2.3.2:
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
     lower-case "^1.1.1"
+
+node-emoji@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.8.1.tgz#6eec6bfb07421e2148c75c6bba72421f8530a826"
+  dependencies:
+    lodash.toarray "^4.4.0"
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.4.0:
   version "2.4.0"

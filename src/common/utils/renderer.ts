@@ -1,11 +1,15 @@
-import chalk from 'chalk'
+//@ts-ignore
+import * as cfonts from 'cfonts'
+import * as Chalk from 'chalk'
+import * as emoji from 'node-emoji'
 
-import {Team} from '../../services/footballData'
+import {Standing} from '../../models'
+import {StandingsTableBuilder} from '../table-builder'
+
+const c = Chalk.default
 
 export default {
   renderHeader(): void {
-    const cfonts = require('cfonts')
-
     cfonts.say('2018 FIFA World Cup', {
       font: 'block',
       align: 'left',
@@ -18,25 +22,14 @@ export default {
     })
   },
 
-  renderTeamTable(tableName: string, teams: Array<Team>): void {
-    const Table = require('cli-table2')
-    const table = new Table({
-      head: [
-        'Team',
-        'Played Games',
-        'Points',
-        'Goals',
-        'Goal Againts',
-        'Goal Difference'
-      ]
-    })
+  renderTeamTable(tableName: string, standings: Array<Standing>): void {
+    console.log(
+      emoji.get('soccer'),
+      c.red.bold(`League table ${tableName.toUpperCase()}`)
+    )
 
-    console.log(chalk.red.bold(`League table ${tableName.toUpperCase()}`))
+    const table = new StandingsTableBuilder(standings)
 
-    const data = teams.map((team: Team) => Object.values(team))
-
-    table.push(...data)
-
-    console.log(table.toString())
+    console.log(table.buildTable().toString())
   }
 }
