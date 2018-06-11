@@ -1,25 +1,18 @@
 import axios from 'axios'
 import {pick} from 'lodash'
 
-import {Standing, IStandingJson} from '../models'
+import {WORLDCUP_2018_ID} from '../config'
+import {Competition, IStandingJson, Standing} from '../models'
 
 const FOOTBALL_DATA_API_URL: string = 'https://api.football-data.org/v1'
 
-const WORLDCUP_ENDPOINT: string = '/competitions/467'
-const LEAGUE_TABLE_ENDPOINT: string = '/competitions/467/leagueTable'
-
-export interface Competition {
-  caption: string
-  league: string
-  year: string
-  numberOfTeams: number
-  numberOfGames: number
-}
+const COMPETITION_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}`
+const LEAGUE_TABLE_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/leagueTable`
 
 export default {
   async getCompetition(): Promise<Competition> {
     const {data} = await axios.get(
-      `${FOOTBALL_DATA_API_URL}${WORLDCUP_ENDPOINT}`
+      `${FOOTBALL_DATA_API_URL}${COMPETITION_ENDPOINT}`
     )
 
     return pick(data, [
