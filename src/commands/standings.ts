@@ -32,8 +32,9 @@ export default class Standings extends Command {
   async renderStandings(): Promise<void> {
     cli.action.start(`${emoji.get('soccer')} fetching all league tables`)
 
-    const standings: Array<
-      Standing
+    const standings: Map<
+      string,
+      Array<Standing>
     > = await footballDataService.getAllStandings()
 
     renderer.renderAllStandings(standings)
