@@ -3,8 +3,8 @@ import * as cfonts from 'cfonts'
 import * as Chalk from 'chalk'
 import * as emoji from 'node-emoji'
 
-import {Standing} from '../../models'
-import {StandingsTableBuilder} from '../table-builder'
+import {Fixture, Standing} from '../../models'
+import {FixturesTableBuilder, StandingsTableBuilder} from '../table-builder'
 
 const c = Chalk.default
 
@@ -37,5 +37,11 @@ export default {
     standings.forEach((tableStandings, table) => {
       this.renderStandings(table, tableStandings)
     })
+  },
+
+  renderFixtures(fixtures: Array<Fixture>): void {
+    const table = new FixturesTableBuilder(fixtures)
+
+    console.log(table.buildTable().toString())
   }
 }

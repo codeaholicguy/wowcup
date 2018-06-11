@@ -51,8 +51,8 @@ export default class Standings extends Command {
       table
     )
 
-    cli.action.stop()
-
     renderer.renderStandings(table, standings)
+
+    cli.action.stop()
   }
 }

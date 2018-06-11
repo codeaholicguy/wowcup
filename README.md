@@ -31,8 +31,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`wowcup fixtures`](#wowcup-fixtures)
 * [`wowcup help [COMMAND]`](#wowcup-help-command)
 * [`wowcup standings`](#wowcup-standings)
+
+## `wowcup fixtures`
+
+get worldcup fixtures
+
+```
+USAGE
+  $ wowcup fixtures
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ wowcup fixtures
+```
+
+_See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.0/src/commands/fixtures.ts)_
 
 ## `wowcup help [COMMAND]`
 

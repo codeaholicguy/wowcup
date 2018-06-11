@@ -2,12 +2,19 @@ import axios from 'axios'
 import {pick} from 'lodash'
 
 import {WORLDCUP_2018_ID} from '../config'
-import {Competition, IStandingJson, Standing} from '../models'
+import {
+  Competition,
+  Fixture,
+  IFixtureJson,
+  IStandingJson,
+  Standing
+} from '../models'
 
 const FOOTBALL_DATA_API_URL: string = 'https://api.football-data.org/v1'
 
 const COMPETITION_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}`
 const LEAGUE_TABLE_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/leagueTable`
+const FIXTURES_ENDPOINT: string = `/competitions/${WORLDCUP_2018_ID}/fixtures`
 
 export default {
   async getCompetition(): Promise<Competition> {
@@ -44,16 +51,22 @@ export default {
   },
 
   async getStandings(tableName: string): Promise<Array<Standing>> {
-    const {
-      data: {standings: standingsJson}
-    } = await axios.get(`${FOOTBALL_DATA_API_URL}${LEAGUE_TABLE_ENDPOINT}`)
     const normalizedTableName: string = tableName.toUpperCase()
-    const standings: Array<Standing> = standingsJson[normalizedTableName]
-      ? standingsJson[normalizedTableName].map(
-          (data: IStandingJson) => new Standing(data)
-        )
-      : []
+    const standings: Map<string, Array<Standing>> = await this.getAllStandings()
+    const result = standings.get(normalizedTableName) || []
 
-    return standings
+    return result
+  },
+
+  async getFixtures(): Promise<Array<Fixture>> {
+    const {
+      data: {fixtures: fixturesJson}
+    } = await axios.get(`${FOOTBALL_DATA_API_URL}${FIXTURES_ENDPOINT}`)
+
+    const fixtures: Array<Fixture> = fixturesJson.map(
+      (fixture: IFixtureJson) => new Fixture(fixture)
+    )
+
+    return fixtures
   }
 }
