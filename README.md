@@ -101,3 +101,18 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
 <!-- commandsstop -->
+
+## Development
+
+The following is step-by-step instruction to run `wowcup` on your local computer.
+
+```
+$ git clone https://github.com/codeaholicguy/wowcup.git
+$ cd wowcup
+$ yarn
+$ bin/run <command>
+```
+
+## License
+
+MIT
