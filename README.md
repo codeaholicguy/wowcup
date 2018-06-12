@@ -53,6 +53,7 @@ OPTIONS
   -h, --help  show CLI help
   -l, --last  get last recent fixtures
   -n, --next  get next recent fixtures
+  -q, --quiet do not show splash header
 
 EXAMPLES
   $ wowcup fixtures
@@ -89,6 +90,7 @@ USAGE
 OPTIONS
   -h, --help         show CLI help
   -t, --table=table  get standings by table
+  -q, --quiet        do not show splash header
 
 EXAMPLES
   $ wowcup standings

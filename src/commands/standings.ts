@@ -13,14 +13,16 @@ export default class Standings extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
-    table: flags.string({char: 't', description: 'get standings by table'})
+    table: flags.string({char: 't', description: 'get standings by table'}),
+    quiet: flags.boolean({char: 'q', description: 'do not show splash header'})
   }
 
   async run() {
     const {flags} = this.parse(Standings)
     const table = flags.table
 
-    renderer.renderHeader()
+    if (!flags.quiet)
+      renderer.renderHeader()
 
     if (table) {
       await this.renderStandingsByTable(table)
