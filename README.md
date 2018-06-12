@@ -35,6 +35,18 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
+
+## Usage
+
+`wowcup` provides two main commands.
+
+1. fixtures
+![](https://i.gyazo.com/a562d442af729c3b59f34110008d5ed0.gif)
+
+2. standings
+![](https://i.gyazo.com/19a5a39b69613baa4154f892a0a8d9b8.gif)
+
 # Commands
 <!-- commands -->
 * [`wowcup fixtures`](#wowcup-fixtures)
@@ -62,23 +74,6 @@ EXAMPLES
 
 _See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.4/src/commands/fixtures.ts)_
 
-## `wowcup help [COMMAND]`
-
-display help for wowcup
-
-```
-USAGE
-  $ wowcup help [COMMAND]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-OPTIONS
-  --all  see all commands in CLI
-```
-
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
-
 ## `wowcup standings`
 
 get worldcup standings
@@ -98,6 +93,23 @@ EXAMPLES
 ```
 
 _See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.4/src/commands/standings.ts)_
+
+## `wowcup help [COMMAND]`
+
+display help for wowcup
+
+```
+USAGE
+  $ wowcup help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
 <!-- commandsstop -->
 
 ## Development
