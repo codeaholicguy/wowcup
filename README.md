@@ -28,7 +28,7 @@ $ npm install -g wowcup
 $ wowcup COMMAND
 running command...
 $ wowcup (-v|--version|version)
-wowcup/0.0.5 darwin-x64 node-v10.3.0
+wowcup/0.0.6 darwin-x64 node-v10.3.0
 $ wowcup --help [COMMAND]
 USAGE
   $ wowcup COMMAND
@@ -62,17 +62,20 @@ USAGE
   $ wowcup fixtures
 
 OPTIONS
-  -h, --help   show CLI help
-  -l, --last   get last recent fixtures
-  -n, --next   get next recent fixtures
-  -q, --quiet  do not show splash header
+  -h, --help     show CLI help
+  -l, --last     get last recent fixtures
+  -n, --next     get next recent fixtures
+  -p, --playing  get playing fixtures
+  -q, --quiet    do not show splash header
 
 EXAMPLES
   $ wowcup fixtures
   $ wowcup fixtures -n
+  $ wowcup fixtures -l
+  $ wowcup fixtures -p
 ```
 
-_See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.5/src/commands/fixtures.ts)_
+_See code: [src/commands/fixtures.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.6/src/commands/fixtures.ts)_
 
 ## `wowcup help [COMMAND]`
 
@@ -109,7 +112,7 @@ EXAMPLES
   $ wowcup standings -t a
 ```
 
-_See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.5/src/commands/standings.ts)_
+_See code: [src/commands/standings.ts](https://github.com/codeaholicguy/wowcup/blob/v0.0.6/src/commands/standings.ts)_
 <!-- commandsstop -->
 
 ## Development
