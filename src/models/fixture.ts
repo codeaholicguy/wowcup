@@ -11,14 +11,18 @@ export enum Status {
   Playing = 'IN_PLAY',
   Finished = 'FINISHED',
   Timed = 'TIMED',
-  Scheduled = 'SCHEDULED'
+  Scheduled = 'SCHEDULED',
+  Postponed = 'POSTPONED',
+  Canceled = 'CANCELED'
 }
 
 const STATUS_TEXT: Map<Status, string> = new Map([
   [Status.Playing, 'Playing'],
   [Status.Finished, 'Finished'],
   [Status.Timed, 'Timed'],
-  [Status.Scheduled, 'Scheduled']
+  [Status.Scheduled, 'Scheduled'],
+  [Status.Postponed, 'Postponed'],
+  [Status.Canceled, 'Canceled']
 ])
 
 export interface IFixtureJson {

@@ -8,7 +8,8 @@ import {
   Fixture,
   IFixtureJson,
   IStandingJson,
-  Standing
+  Standing,
+  Status
 } from '../models'
 
 const FOOTBALL_DATA_API_URL: string = 'https://api.football-data.org/v1'
@@ -135,5 +136,14 @@ export default {
     }
 
     return []
+  },
+
+  async getPlayingFixtures(): Promise<Array<Fixture>> {
+    const fixtures: Array<Fixture> = await this.getFixtures()
+    const result: Array<Fixture> | undefined = fixtures.filter(
+      (fixture) => fixture.status === Status.Playing
+    )
+
+    return result || []
   }
 }
