@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {head, pick} from 'lodash'
+import {pick} from 'lodash'
 import * as moment from 'moment'
 
 import {WORLDCUP_2018_ID} from '../config'
