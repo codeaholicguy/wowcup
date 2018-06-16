@@ -18,8 +18,14 @@ export default class Fixtures extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
-    next: flags.boolean({char: 'n', description: 'get next recent fixtures'}),
-    last: flags.boolean({char: 'l', description: 'get last recent fixtures'}),
+    next: flags.boolean({
+      char: 'n',
+      description: 'get next recent fixtures in 24h'
+    }),
+    last: flags.boolean({
+      char: 'l',
+      description: 'get last recent fixtures in 24h'
+    }),
     playing: flags.boolean({char: 'p', description: 'get playing fixtures'}),
     quiet: flags.boolean({char: 'q', description: 'do not show splash header'})
   }

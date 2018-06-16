@@ -74,68 +74,28 @@ export default {
 
   async getNextRecentFixtures(): Promise<Array<Fixture>> {
     const fixtures: Array<Fixture> = await this.getFixtures()
-    const result: Map<string, Array<Fixture>> = fixtures
-      .filter((fixture: Fixture) => moment().isBefore(fixture.date))
-      .reduce((acc: Map<string, Array<Fixture>>, fixture: Fixture) => {
-        const key: string = moment(fixture.date).format('L')
-
-        let list: Array<Fixture> | undefined = acc.get(key)
-
-        if (list) {
-          list.push(fixture)
-        } else {
-          list = [fixture]
-        }
-
-        acc.set(key, list)
-
-        return acc
-      }, new Map<string, Array<Fixture>>())
-    const nextRecentDate: string | undefined = head(
-      Array.from(result.keys()).sort(
-        (a: string, b: string) =>
-          moment(new Date(a)).isAfter(new Date(b)) ? 1 : -1
-      )
+    const result: Array<Fixture> = fixtures.filter(
+      (fixture: Fixture) =>
+        moment().isBefore(fixture.date) &&
+        moment()
+          .add(24, 'hour')
+          .isAfter(fixture.date)
     )
 
-    if (nextRecentDate) {
-      return result.get(nextRecentDate) || []
-    }
-
-    return []
+    return result
   },
 
   async getLastRecentFixtures(): Promise<Array<Fixture>> {
     const fixtures: Array<Fixture> = await this.getFixtures()
-    const result: Map<string, Array<Fixture>> = fixtures
-      .filter((fixture: Fixture) => moment().isAfter(fixture.date))
-      .reduce((acc: Map<string, Array<Fixture>>, fixture: Fixture) => {
-        const key: string = moment(fixture.date).format('L')
-
-        let list: Array<Fixture> | undefined = acc.get(key)
-
-        if (list) {
-          list.push(fixture)
-        } else {
-          list = [fixture]
-        }
-
-        acc.set(key, list)
-
-        return acc
-      }, new Map<string, Array<Fixture>>())
-    const lastRecentDate: string | undefined = head(
-      Array.from(result.keys()).sort(
-        (a: string, b: string) =>
-          moment(new Date(a)).isBefore(new Date(b)) ? 1 : -1
-      )
+    const result: Array<Fixture> = fixtures.filter(
+      (fixture: Fixture) =>
+        moment().isAfter(fixture.date) &&
+        moment()
+          .add(-24, 'hour')
+          .isBefore(fixture.date)
     )
 
-    if (lastRecentDate) {
-      return result.get(lastRecentDate) || []
-    }
-
-    return []
+    return result
   },
 
   async getPlayingFixtures(): Promise<Array<Fixture>> {
