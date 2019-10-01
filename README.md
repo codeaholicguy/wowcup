@@ -128,4 +128,4 @@ $ bin/run <command>
 
 ## License
 
-MIT
+[MIT](LICENSE)
